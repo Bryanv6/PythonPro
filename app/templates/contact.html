@@ -1,4 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-CONTACT US!
+<h3>{{title}}</h3>
+<form action="" method="post" name="register">
+{{form.csrf_token}}
+<p> Name:
+    {{form.name(size=30)}}
+</p>
+<p> Email:
+    {{form.email(size=30)}}
+</p>
+<p> Message:
+    {{form.message(size=30)}}
+</p>
+<input type="submit" value="Send!">
+</form>
 {% endblock %}
