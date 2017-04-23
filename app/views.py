@@ -1,10 +1,11 @@
 from flask import render_template
 from app import p_app
 from app.forms import Register, Login, Contact
+from app.accounts import register_account, login_account
 
-@p_app.route('/')
-@p_app.route('/index')
-@p_app.route('/index.html')
+@p_app.route('/', methods=['GET', 'POST'])
+@p_app.route('/index', methods=['GET', 'POST'])
+@p_app.route('/index.html', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
@@ -16,23 +17,25 @@ def about():
 @p_app.route('/login', methods=['GET', 'POST'])
 @p_app.route('/login.html', methods=['GET', 'POST'])
 def login():
+    signin = None
     form = Login()
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
-        #TODO: call login function here
-    return render_template('login.html', form=form)
+        signin = login_account(username, password)
+    return render_template('login.html', form=form, signin=signin)
 
 @p_app.route('/register', methods=['GET', 'POST'])
 @p_app.route('/register.html', methods=['GET', 'POST'])
 def register():
+    register = None
     form = Register()
     if form.validate_on_submit():
         username = form.username.data
         password = form.password.data
         password2 = form.password2.data
-        #TODO: call register function here
-    return render_template('register.html', form=form)
+        register = register_account(username, password, password2)
+    return render_template('register.html', form=form, register=register)
 
 @p_app.route('/contact', methods=['GET', 'POST'])
 @p_app.route('/contact.html', methods=['GET', 'POST'])

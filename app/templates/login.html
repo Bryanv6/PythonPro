@@ -11,4 +11,10 @@
 </p>
 <input type="submit" value="Login!">
 </form>
+
+    {% if signin %} <br/>
+        Login successful! <br/>
+        <li><a href="{{ url_for('index') }}">Continue to Main Page!</a></li>
+    {% endif %}
+
 {% endblock %}
