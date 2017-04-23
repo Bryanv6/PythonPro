@@ -25,6 +25,8 @@ def meta(system, gname):
     url = "http://www.metacritic.com/game/"
     #request headers: copied User-Agent of the GET request (network tab of developer tools in browser)
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0'}
+    system = system.lower().replace(' ', '-')
+    gname = gname.lower().replace(' ', '-').replace(':', '')
     opsys = system
     game = gname
     game = (game.lower()).replace(' ', '-')
