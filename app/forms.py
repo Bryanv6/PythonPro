@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField
+from wtforms import StringField, PasswordField, fields
 from wtforms.validators import DataRequired
 
 class Register(FlaskForm):
@@ -14,4 +14,5 @@ class Login(FlaskForm):
 class Contact(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
-    message = StringField('Message', validators=[DataRequired()])
+    message = fields.TextAreaField("Message", validators=[DataRequired()],
+                                   render_kw=({"rows": 10, "cols": 30}))
