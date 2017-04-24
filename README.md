@@ -11,3 +11,7 @@ Google Doc Link: https://docs.google.com/document/d/1FBRWri3O9snIcIh4o6chbVJ22he
   (python_env)PythonPro$ pip install flask
 
   (python_env)PythonPro$ pip install flask-wtf
+  
+  (python_env)PythonPro$ pip install requests
+  
+  (python_env)PythonPro$ pip install lxml
