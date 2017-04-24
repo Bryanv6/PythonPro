@@ -45,10 +45,13 @@
             {{ form.csrf_token }}
                   <p>
                       {{ form.game_name(size=30) }}
+                      <input type="submit" class="form-control" value="Search">
                   </p>
-                  <input type="submit" class="form-control" value="Search">
+                  
 
         </form>
+        <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ url_for('top10') }}">Get Top 10 Games</a></li>
   		</div>
   	</div>
   </nav>

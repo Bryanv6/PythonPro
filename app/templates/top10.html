@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 <center><h1>Top 10 Games by Metascore</h1></center>
-<form>
-    {{form.csrf_token}}
-<p> Platform: 
-<select action="" method="post" name="top10">
-
-</select> </p>
-    <input type="submit" value="Submit">
-</form>
  
  <table style="width:100%">
   <tr>
@@ -20,62 +12,62 @@
   <tr>
     <td>{{ top10[0][0] }}</td>
     <td>{{ top10[0][1] }}</td>
-    <td>{{ top10[0][2] }}</td>
     <td>{{ top10[0][3] }}</td>
+    <td>{{ top10[0][4] }}</td>
   </tr>
  <tr>
     <td>{{ top10[1][0] }}</td>
     <td>{{ top10[1][1] }}</td>
-    <td>{{ top10[1][2] }}</td>
     <td>{{ top10[1][3] }}</td>
+    <td>{{ top10[1][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[2][0] }}</td>
     <td>{{ top10[2][1] }}</td>
-    <td>{{ top10[2][2] }}</td>
     <td>{{ top10[2][3] }}</td>
+    <td>{{ top10[2][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[3][0] }}</td>
     <td>{{ top10[3][1] }}</td>
-    <td>{{ top10[3][2] }}</td>
     <td>{{ top10[3][3] }}</td>
+    <td>{{ top10[3][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[4][0] }}</td>
     <td>{{ top10[4][1] }}</td>
-    <td>{{ top10[4][2] }}</td>
     <td>{{ top10[4][3] }}</td>
+    <td>{{ top10[4][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[5][0] }}</td>
     <td>{{ top10[5][1] }}</td>
-    <td>{{ top10[5][2] }}</td>
     <td>{{ top10[5][3] }}</td>
+    <td>{{ top10[5][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[6][0] }}</td>
     <td>{{ top10[6][1] }}</td>
-    <td>{{ top10[6][2] }}</td>
     <td>{{ top10[6][3] }}</td>
+    <td>{{ top10[6][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[7][0] }}</td>
     <td>{{ top10[7][1] }}</td>
-    <td>{{ top10[7][2] }}</td>
     <td>{{ top10[7][3] }}</td>
+    <td>{{ top10[7][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[8][0] }}</td>
     <td>{{ top10[8][1] }}</td>
-    <td>{{ top10[8][2] }}</td>
     <td>{{ top10[8][3] }}</td>
+    <td>{{ top10[8][4] }}</td>
   </tr>
   <tr>
     <td>{{ top10[9][0] }}</td>
     <td>{{ top10[9][1] }}</td>
-    <td>{{ top10[9][2] }}</td>
     <td>{{ top10[9][3] }}</td>
+    <td>{{ top10[9][4] }}</td>
   </tr>
 </table> 
 

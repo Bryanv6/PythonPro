@@ -102,7 +102,7 @@ def get_top10(platform, timeFrame):
     headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0'}
     page = requests.get(url, headers=headers)
     
-    data = re.findall(r'<div class="product_item row_num">\s*(\d*).\s*</div>\s*<div class="product_item product_score">\s*<div class="metascore_w small game positive">(\d*)</div>\s*</div>\s*<div class="product_item product_title">\s*<a href="(.*?)">\s*(.*?)\s*(.*?)\s*</a>\s*</div>\s*<div class="product_item product_userscore_txt">\s*<span class="label">User:</span>\s*<span class="data textscore textscore_.*?">(.*?)</span>\s*</div>', page.text)
+    data = re.findall(r'<div class="product_item row_num">\s*(\d*).\s*</div>\s*<div class="product_item product_score">\s*<div class="metascore_w small game positive">(\d*)</div>\s*</div>\s*<div class="product_item product_title">\s*<a href=".*?">\s*(.*?)\s*(.*?)\s*</a>\s*</div>\s*<div class="product_item product_userscore_txt">\s*<span class="label">User:</span>\s*<span class="data textscore textscore_.*?">(.*?)</span>\s*</div>', page.text)
     top10 = []
     for i in range(0,10):
         top10.append(data[i])
