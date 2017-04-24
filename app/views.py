@@ -72,5 +72,5 @@ def top10():
     _timeFrame = 'All Time'
     top10 = get_top10(_platform, _timeFrame)
 
-    return render_template('top10.html', form=form, top10=top10, name=name)
+    return render_template('top10.html', form=form, top10=top10)
 
