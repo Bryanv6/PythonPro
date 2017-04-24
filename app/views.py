@@ -1,8 +1,9 @@
 from flask import render_template
 from app import p_app
-from app.forms import Register, Login, Contact, Search
+from app.forms import Register, Login, Contact, Search, Platform_dropdown
 from app.accounts import register_account, login_account
 from app.metascrap import meta
+from app.top10 import get_top10
 
 @p_app.route('/', methods=['GET', 'POST'])
 @p_app.route('/index', methods=['GET', 'POST'])
@@ -68,10 +69,11 @@ def search_result():
 @p_app.route('/top10', methods=['GET', 'POST'])
 @p_app.route('/top10.html', methods=['GET', 'POST'])
 def top10():
-    top10 = None
+    name = []
     form = Platform_dropdown()
-    _platform = form._platform
-    _timeFrame = form._timeFrame
-    top10 = get_top10('','')
-    return render_template('top10.html', form=form, top10=top10)
+    _platform = 'Playstation 4'
+    _timeFrame = 'All Time'
+    top10 = get_top10(_platform, _timeFrame)
+
+    return render_template('top10.html', form=form, top10=top10, name=name)
 

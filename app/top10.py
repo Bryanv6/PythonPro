@@ -106,5 +106,6 @@ def get_top10(platform, timeFrame):
     top10 = []
     for i in range(0,10):
         top10.append(data[i])
+
     
     return top10

@@ -7,19 +7,30 @@ class Register(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = StringField('Password', validators=[DataRequired()])
     password2 = StringField('Re-type Password', validators=[DataRequired()])
+    game_name = StringField()
+
+class About(FlaskForm):
+    game_name = StringField()
 
 class Login(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = StringField('Password', validators=[DataRequired()])
+    game_name = StringField()
 
 class Contact(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
     message = StringField('Message', validators=[DataRequired()])
+    game_name = StringField()
+
+class Search(FlaskForm):
+    game_name = StringField()
 	
 
 class Platform_dropdown(FlaskForm):
-    '''platform = []
+    game_name = StringField()
+    """
+    platform = []
     platform.append(('Playstation 4', 'ps4'))
     platform.append(('Xbox One', 'xboxone'))
     platform.append(('Switch', 'switch'))
@@ -27,7 +38,7 @@ class Platform_dropdown(FlaskForm):
     platform.append(('Wii U', 'wii-u'))
     platform.append(('3DS', '3ds'))
     platform.append(('PS Vita', 'vita'))
-    platform.append(('iOS', 'ios'))'''
+    platform.append(('iOS', 'ios')) """
 
     timeFrames = []
     timeFrames.append(('All Time','all'))
@@ -55,6 +66,7 @@ class Platform_dropdown(FlaskForm):
     timeFrames.append(('1997','1997'))
     timeFrames.append(('1996','1996'))
     timeFrames.append(('1995','1995'))
-
-    _platform = SelectField('Platform', choices=[('Playstation 4', 'ps4'), ('Xbox One', 'xboxone'), ('Switch', 'switch'), ('PC', 'pc'), ('Wii U', 'wii-u'), ('3DS', '3ds'), ('PS Vita', 'vita'), ('iOS', 'ios')])
-    _timeFrame = SelectField('Timeframe', choices=timeFrames)
+    _platform = 'Playstation 4'
+    _timeFrame = 'All Time'
+    #_platform = SelectField('Platform', choices=[('Playstation 4', 'ps4'), ('Xbox One', 'xboxone'), ('Switch', 'switch'), ('PC', 'pc'), ('Wii U', 'wii-u'), ('3DS', '3ds'), ('PS Vita', 'vita'), ('iOS', 'ios')])
+    #_timeFrame = SelectField('Timeframe', choices=timeFrames)
