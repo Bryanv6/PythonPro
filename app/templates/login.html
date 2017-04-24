@@ -1,15 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 <h3>{{title}}</h3>
-<form action="" method="post" name="login">
+<h3 align="center">Login to Game Review Bros</h3>
+
+<br><br>
+<form class="form-horizontal" method="post" name="login">
 {{form.csrf_token}}
-<p> Username:
-    {{form.username(size=30)}}
-</p>
-<p> Password:
-    {{form.password(size=30)}}
-</p>
-<input type="submit" value="Login!">
+
+<div class="form-group">
+<div class="col-md-3"></div>
+<center><label class= "col-md-2">Username</label>
+
+<div class="col-md-3">
+
+{{form.username(size=30)}}
+
+</div>
+
+</div>
+
+<div class="form-group">
+<div class="col-md-3"></div>
+<center><label class= "col-md-2">Password</label>
+
+<div class="col-md-3">
+
+{{form.password(size=30)}}
+
+</div>
+
+</div>
+<center><input type="submit" value="Login" class="btn btn-primary">
 </form>
 
     {% if signin %} <br/>
