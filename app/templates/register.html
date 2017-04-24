@@ -4,7 +4,7 @@
 <h3 align="center">Sign Up for Game Review Bros</h3>
 
 <br><br>
-<form class="form-horizontal" action="" method="post" name="register">
+<form class="form-horizontal" action="register" method="post" name="register">
 {{form.csrf_token}}
 
 <div class="form-group">
@@ -46,13 +46,10 @@
 </div>
 
 
-<center><a href="/" class = "btn btn-primary">Submit</a>
+<center><input type="submit" value="Submit" class="btn btn-primary">
           </div>
         </div>
-      </div>
-    </div>
-
-
+      </form>
 
     {% if register %} <br/>
         Registration successful! <br/>
