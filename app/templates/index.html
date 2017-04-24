@@ -2,11 +2,12 @@
 {% block content %}
 <!--navbar is now located in base.html so it can be extended to every page -->
 <center><h1>Game Review Bros.</h1></center>
+<br><br>
 <!--Add maybe an image to every column and link to the specific game -->
   <div class="container">
-	<div class="row">
+	<div class="text-center">
 
-		<div class="col-md-4">
+		<div class="col-md-8">
 
       <a href="#" class="thumbnail">
         <img src="../static/sixteenNine.jpg" alt="...">
@@ -14,15 +15,18 @@
 			<h3>Mass Effect: Andromeda</h3>
 			<p>A short description or preview of the game. Maybe a linkable image even.</p>
 		</div>
-
-		<div class="col-md-4">
+  </div>
+<div class="row">
+		<div class="col-md-8">
       <a href="#" class="thumbnail">
         <img src="../static/HZD-header.jpg" alt="...">
       </a>
 			<h3>Horizon Zero Dawn</h3>
 			<p>A short description or preview of the game. Maybe a linkable image even.</p>
 		</div>
-		<div class="col-md-4">
+  </div>
+    <div class="row">
+		<div class="col-md-8">
       <a href="#" class="thumbnail">
         <img src="../static/GTAV.jpg" alt="...">
       </a>
@@ -38,5 +42,10 @@
 
 
 </body>
+<footer>
+<div class="footer">
+<p> <center> Python Group - Logan, Greg, Nvoran, Bryan Villegas </center> </p>
+</div>
+</footer>
 </html>
 {% endblock %}

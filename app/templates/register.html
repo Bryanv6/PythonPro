@@ -1,19 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 <h3>{{title}}</h3>
-<form action="" method="post" name="register">
+<h3 align="center">Sign Up for PlanetPetition</h3>
+
+<br><br>
+<form class="form-horizontal" action="" method="post" name="register">
 {{form.csrf_token}}
-<p> Username:
-    {{form.username(size=30)}}
-</p>
-<p> Password:
-    {{form.password(size=30)}}
-</p>
-<p> Re-type Password:
-    {{form.password2(size=30)}}
-</p>
-<input type="submit" value="Register!">
-</form>
+
+<div class="form-group">
+<div class="col-md-3"></div>
+<center><label class= "col-md-2">Username</label>
+
+<div class="col-md-3">
+
+{{form.username(size=30)}}
+
+</div>
+
+</div>
+
+<div class="form-group">
+<div class="col-md-3"></div>
+<center><label class= "col-md-2">Password</label>
+
+<div class="col-md-3">
+
+{{form.password(size=30)}}
+
+</div>
+
+</div>
+
+<div class="form-group">
+<div class="col-md-3"></div>
+<center><label class= "col-md-2">Confirm Password</label>
+
+<div class="col-md-3">
+
+{{form.password2(size=30)}}
+
+</div>
+
+</div>
+
+</div>
+
+
+<center><a href="/" class = "btn btn-primary">Submit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     {% if register %} <br/>
         Registration successful! <br/>
