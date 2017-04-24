@@ -5,11 +5,11 @@
     No result found. <br/>
     {% endif %}
     {% if info %} <br/>
-        Game name: {{ info['name'] }} <br/>
-        Platform: Playstation 4 <br/>
-        Release date: {{ info['date'] }}<br/>
-        Critic Score: {{ info['metascore'] }} from {{ info['numcritics'] }} critic reviews. <br/>
-        Player Score: {{ info['userscore'] }} from {{ info['numratings'] }} player reviews. <br/>
+        <label>Game name:</label> {{ info['name'] }} <br/>
+        <label>Platform:</label> Playstation 4 <br/>
+        <label>Release date:</label> {{ info['date'] }}<br/>
+        <label>Critic Score:</label> {{ info['metascore'] }} from {{ info['numcritics'] }} critic reviews. <br/>
+        <label>Player Score:</label> {{ info['userscore'] }} from {{ info['numratings'] }} player reviews. <br/>
     {% endif %}
 
 {% endblock %}
