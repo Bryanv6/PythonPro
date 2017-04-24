@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if not info %} <br/>
+    No result found. <br/>
+    {% endif %}
+    {% if info %} <br/>
+        Game name: {{ info['name'] }} <br/>
+        Platform: Playstation 4 <br/>
+        Release date: {{ info['date'] }}<br/>
+        Critic Score: {{ info['metascore'] }} from {{ info['numcritics'] }} critic reviews. <br/>
+        Player Score: {{ info['userscore'] }} from {{ info['numratings'] }} player reviews. <br/>
+    {% endif %}
+
+{% endblock %}

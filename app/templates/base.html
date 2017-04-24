@@ -40,16 +40,14 @@
   				<li><a href="{{ url_for('about') }}">About</a></li>
   				<li><a href="{{ url_for('contact') }}">Contact</a></li>
   			</ul>
-        <form class="navbar-form navbar-right">
-          <div id="custom-search-input">
-              <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <button class="btn btn-info btn-md" type="button">
-                    <i class="glyphicon glyphicon-search"></i>
-                  </button>
-              </div>
+            <h3>{{ title }}</h3>
+        <form action ="{{ url_for('search_result') }}" method="post" name="game_search" class="navbar-form navbar-right">
+            {{ form.csrf_token }}
+                  <p>
+                      {{ form.game_name(size=30) }}
+                  </p>
+                  <input type="submit" class="form-control" value="Search">
 
-          </div>
         </form>
   		</div>
   	</div>

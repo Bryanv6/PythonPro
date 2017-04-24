@@ -1,18 +1,25 @@
 from flask import render_template
 from app import p_app
-from app.forms import Register, Login, Contact
+from app.forms import Register, Login, Contact, Search
 from app.accounts import register_account, login_account
+from app.metascrap import meta
 
 @p_app.route('/', methods=['GET', 'POST'])
 @p_app.route('/index', methods=['GET', 'POST'])
 @p_app.route('/index.html', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    info = None
+    form = Search()
+    if form.validate_on_submit():
+        game_name = form.game_name.data
+        info = meta('playstation-4', game_name)
+    return render_template('index.html', form=form, info=info)
 
-@p_app.route('/about')
-@p_app.route('/about.html')
+@p_app.route('/about', methods=['GET', 'POST'])
+@p_app.route('/about.html', methods=['GET', 'POST'])
 def about():
-    return render_template('about.html')
+    form = Search()
+    return render_template('about.html', form=form)
 
 @p_app.route('/login', methods=['GET', 'POST'])
 @p_app.route('/login.html', methods=['GET', 'POST'])
@@ -47,4 +54,14 @@ def contact():
         message = form.message.data
         #TODO: call contact function here
     return render_template('contact.html', form=form)
+
+@p_app.route('/search-result', methods=['GET', 'POST'])
+@p_app.route('/search-result.html', methods=['GET', 'POST'])
+def search_result():
+    info = None
+    form = Search()
+    if form.validate_on_submit():
+        game_name = form.game_name.data
+        info = meta('playstation-4', game_name)
+    return render_template('search_result.html', form=form, info=info)
 
