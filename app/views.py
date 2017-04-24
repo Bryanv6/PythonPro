@@ -65,3 +65,13 @@ def search_result():
         info = meta('playstation-4', game_name)
     return render_template('search_result.html', form=form, info=info)
 
+@p_app.route('/top10', methods=['GET', 'POST'])
+@p_app.route('/top10.html', methods=['GET', 'POST'])
+def top10():
+    top10 = None
+    form = Platform_dropdown()
+    _platform = form._platform
+    _timeFrame = form._timeFrame
+    top10 = get_top10('','')
+    return render_template('top10.html', form=form, top10=top10)
+
