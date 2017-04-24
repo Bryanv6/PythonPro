@@ -1,0 +1,4 @@
+flask
+flask-wtf
+lxml
+requests

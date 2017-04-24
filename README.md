@@ -8,10 +8,4 @@ Google Doc Link: https://docs.google.com/document/d/1FBRWri3O9snIcIh4o6chbVJ22he
   
   PythonPro$ source python_env/bin/activate
   
-  (python_env)PythonPro$ pip install flask
-
-  (python_env)PythonPro$ pip install flask-wtf
-  
-  (python_env)PythonPro$ pip install requests
-  
-  (python_env)PythonPro$ pip install lxml
+  (python_env)PythonPro$ pip install -r required.txt
