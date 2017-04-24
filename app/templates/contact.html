@@ -17,22 +17,21 @@ div.relative {
 </div>
 <p>
  <div class="container">
-<form class="form-inline" name="register" method="post">
+<form class="form-inline" name="contact" method="post">
 	{{form.csrf_token}}
     <label for="exampleInputName2">Name</label>
     {{form.name(size=30)}}
     <label for="exampleInputEmail2">Email</label>
     {{form.email(size=30)}}
-  
-  <input class = "btn btn-primary" type="submit" value="Send">
+
   <div class="row">
   <p>
   <div class="col-md-12">
-  <textarea class="col-md-8 form" rows="10" name="comment" id="comment">
-	</textarea>
+      {{form.message(size=30)}}
   </div>
   </p>
   </div>
+    <input class = "btn btn-primary" type="submit" value="Send">
 </form>
 
 </div>
@@ -40,5 +39,9 @@ div.relative {
 </p>
 
 <br>
+
+    {% if sent %} <br/>
+        Sent message successfully. You will hear back from us within 3-5 business days. <br/>
+    {% endif %}
 
 {% endblock %}

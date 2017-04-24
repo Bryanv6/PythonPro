@@ -4,17 +4,14 @@ from app.forms import Register, Login, Contact, Search, Platform_dropdown
 from app.accounts import register_account, login_account
 from app.metascrap import meta
 from app.top10 import get_top10
+from app.contact import send_email
 
 @p_app.route('/', methods=['GET', 'POST'])
 @p_app.route('/index', methods=['GET', 'POST'])
 @p_app.route('/index.html', methods=['GET', 'POST'])
 def index():
-    info = None
     form = Search()
-    if form.validate_on_submit():
-        game_name = form.game_name.data
-        info = meta('playstation-4', game_name)
-    return render_template('index.html', form=form, info=info)
+    return render_template('index.html', form=form)
 
 @p_app.route('/about', methods=['GET', 'POST'])
 @p_app.route('/about.html', methods=['GET', 'POST'])
@@ -48,13 +45,14 @@ def register():
 @p_app.route('/contact', methods=['GET', 'POST'])
 @p_app.route('/contact.html', methods=['GET', 'POST'])
 def contact():
+    sent = None
     form = Contact()
     if form.validate_on_submit():
         name = form.name.data
         email = form.email.data
         message = form.message.data
-        #TODO: call contact function here
-    return render_template('contact.html', form=form)
+        sent = send_email(name, email, message)
+    return render_template('contact.html', form=form, sent=sent)
 
 @p_app.route('/search-result', methods=['GET', 'POST'])
 @p_app.route('/search-result.html', methods=['GET', 'POST'])
@@ -69,7 +67,6 @@ def search_result():
 @p_app.route('/top10', methods=['GET', 'POST'])
 @p_app.route('/top10.html', methods=['GET', 'POST'])
 def top10():
-    name = []
     form = Platform_dropdown()
     _platform = 'Playstation 4'
     _timeFrame = 'All Time'
