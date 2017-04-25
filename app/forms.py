@@ -21,7 +21,6 @@ class Contact(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired()])
     message = fields.TextAreaField('Message', validators=[DataRequired()], render_kw=({"rows": 10, "cols": 30}))
-    #message = StringField('Message', validators=[DataRequired()])
     game_name = StringField()
 
 class Search(FlaskForm):
