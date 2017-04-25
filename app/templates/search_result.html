@@ -10,6 +10,12 @@
         <label>Release date:</label> {{ info['date'] }}<br/>
         <label>Critic Score:</label> {{ info['metascore'] }} from {{ info['numcritics'] }} critic reviews. <br/>
         <label>Player Score:</label> {{ info['userscore'] }} from {{ info['numratings'] }} player reviews. <br/>
+        <label>Bio:</label> {{ info['summary'] }} <br/>
+        <div>
+        <a href="#" class="file">
+        <img src="{{ info['photo'] }}" alt="...">
+      </a>
+        </div>
     {% endif %}
 
 {% endblock %}

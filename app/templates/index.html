@@ -3,6 +3,7 @@
 <!--navbar is now located in base.html so it can be extended to every page -->
 <center><h1>Game Review Bros.</h1></center>
 <br><br>
+    <center><h2>Trending Games</h2></center>
 <!--Add maybe an image to every column and link to the specific game -->
   <div class="container">
 	<div class="text-center">
@@ -14,10 +15,8 @@
       </a>
       </div>
       <div class="col-md-6">
-			<h3>Mass Effect: Andromeda</h3>
-			<p>The story opens after a 600-year journey to the Andromeda galaxy, as the crew begins searching for a new home for humanity.
-        The dreams of easy settlement are quickly shattered, as worlds expected to be paradises are instead wastelands,
-        and the Pathfinder discovers that not all inhabitants of…</p>
+			<h3>{{ info1['name'] }}</h3>
+			<p>{{ info1['summary'] }}</p>
     </div>
 
   </div>
@@ -29,22 +28,20 @@
       </a>
     </div>
       <div class="col-md-6">
-			<h3>Horizon Zero Dawn</h3>
-			<p>Horizon Zero Dawn is a PS4-exclusive action role playing game developed by Guerrilla Games, creators of the Killzone franchise.
-        As Horizon Zero Dawn’s main protagonist Aloy, a skilled hunter, explore a vibrant and lush world inhabited by mysterious mechanized creatures.
-        Embark on an…</p>
+			<h3>{{ info2['name'] }}</h3>
+			<p>{{ info2['summary'] }}</p>
 		</div>
   </div>
   <br><br>
     <div class="text-center pull-left">
 		<div class="col-md-6">
-      <a href="#" class="thumbnail">
+      <a href="http://www.metacritic.com/game/playstation-4/grand-theft-auto-v" class="thumbnail">
         <img src="../static/GTAV.jpg" alt="...">
       </a>
     </div>
     <div class="col-md-6">
-			<h3>Grand Theft Auto V</h3>
-			<p>A short description or preview of the game. Maybe a linkable image even.</p>
+			<h3>{{ info3['name'] }}</h3>
+			<p>{{ info3['summary'] }}</p>
 		</div>
 	</div>
 </div>

@@ -11,7 +11,10 @@ from app.contact import send_email
 @p_app.route('/index.html', methods=['GET', 'POST'])
 def index():
     form = Search()
-    return render_template('index.html', form=form)
+    info1 = meta('playstation 4', 'mass effect andromeda')
+    info2 = meta('playstation 4', 'horizon zero dawn')
+    info3 = meta('playstation 4', 'grand theft auto v')
+    return render_template('index.html', form=form, info1=info1, info2=info2, info3=info3)
 
 @p_app.route('/about', methods=['GET', 'POST'])
 @p_app.route('/about.html', methods=['GET', 'POST'])

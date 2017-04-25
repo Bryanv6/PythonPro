@@ -92,8 +92,8 @@ def meta(system, gname):
         return None
 
 if __name__ == "__main__":
-    system = "nintendo 64"
-    game = "the legend of zelda ocarina of time"
+    system = "playstation 4"
+    game = "horizon zero dawn"
     import time
     start_time = time.clock()
     d = meta(system, game)
